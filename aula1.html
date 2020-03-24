@@ -29,8 +29,8 @@
             <li>Item 2</li>
             <li>Item 3</li>
         </ul>
-        <button onclick="bozo()">Aperte aqui para ver a tabela</button>
-        <table  id='123' hidden>
+       <button id="1234">Aperte aqui para ver a tabela</button>
+        <table  id='123'>
             <caption>Descrição da tabela</caption>
             <tread>
                 <tr>
@@ -126,11 +126,15 @@ function showPosition(position) {
         </body>
 </html>
 <script>
-function bozo(){
-    var d = document.getElementById('123').style.display;
-    if(d == "none")
-        document.getElementById('123').style.display = 'block';
-    else
-        document.getElementById('123').style.display = 'none';
-    }
+   (function(){
+       document.getElementById('123').style.display = 'none';
+       var test = document.getElementById('1234');
+       test.addEventListener('click',function(){
+        var t = document.getElementById('123').style.display;
+        if(t == "none")
+            document.getElementById('123').style.display = 'block';
+        else
+            document.getElementById('123').style.display = 'none';
+       })
+   })();
 </script>
